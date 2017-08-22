@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>webunitconverter</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+<meta name="msapplication-TileColor" content="#f00">
+<script src="webunitconverter.js"></script>
+<script src="js.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css">
+<link href="https://fonts.googleapis.com/css?family=Rosario:400,700" rel="stylesheet">
+</head>
+<body>
+<header>
+	<div class="logo"></div>
+	<nav>
+		<a id="nop" href="#nop">&#x2261;</a>
+		<a id="ncl" href="#">&#x2261;</a>
+		<ul>
+			<li><a href="#features">Features</a></li>
+			<li><a href="#demo">Demo</a></li>
+			<li><a href="#css">CSS Units</a></li>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="#nop">GitHub</a>
+				<ul>
+					<li><a href="https://github.com/haiderzia2002/webunitconverter">Repository</a></li>
+					<li><a href="https://github.com/haiderzia2002/webunitconverter/issues">Report Bug/Feature request</a></li>
+					<li><a href="https://github.com/haiderzia2002">Creator's GitHub</a></li>
+					<li><a href="https://github.com/haiderzia2002/webunitconverter/releases">Download</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<h1><a href="https://github.com/haiderzia2002/webunitconverter">webunitconverter</a></h1>
+	<h3><a href="https://github.com/haiderzia2002/meo/releases">Latest release - v1.0.0</a></h3>
+	<p>A way to convert an entire CSS or JavaScript file to use a different unit.</p>
+	<section id="features">
+		<h2>Features</h2>
+		<ul>
+			<li>Supports converting to and from em, rem, % and px.</li>
+			<li>Can convert whole CSS files.</li>
+			<li>Easily integrateable into your own projects.</li>
+			<li>Licensed under the GNU LGPLv3.</li>
+			<li>Doesn't depend on jQuery or any other JavaScript library</li>
+		</ul>
+	</section>
+	<section id="demo">
+		<h2>Demo</h2>
+		<div>
+			<input type="number" id="sz" min="0" value="16">
+			<div>
+				<select id="before">
+					<option>px</option>
+					<option>em</option>
+					<option>rem</option>
+					<option>%</option>
+				</select>
+				<span style="width: 2em;">⟶</span>
+				<select id="after">
+					<option>px</option>
+					<option>em</option>
+					<option>rem</option>
+					<option>%</option>
+				</select>
+			</div>
+			<input type="button" id="submit" value="Submit">
+		</div>
+		<textarea id="tx"></textarea>
+	</section>
+	<section id="cssunits">
+		<h2>CSS Units</h2>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="5" style="border: 1px solid black; background: white; color: black;">Base unit ratio of each unit at root</th>
+				</tr>
+				<tr>
+					<th></th>
+					<th>px</th>
+					<th>em</th>
+					<th>%</th>
+					<th>rem</th>
+					<th>Base unit ratio inherited from parent</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>px</td>
+				<td></td>
+				<td>16px:1em</td>
+				<td>16px:100%</td>
+				<td>16px:1rem</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>em</td>
+				<td>1em:16px</td>
+				<td></td>
+				<td>1em:100%</td>
+				<td>1em:1rem</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<td>%</td>
+				<td>100%:16px</td>
+				<td>100%:1em</td>
+				<td></td>
+				<td>100%:1rem</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<td>rem</td>
+				<td>1rem:16px</td>
+				<td>1rem:1em</td>
+				<td>1rem:100%</td>
+				<td></td>
+				<td>No</td>
+			</tr>
+		</table>
+		<h3>These will work on a whole CSS file</h3>
+		<div>PX to REM</div>
+		<div>REM to PX</div>
+		<div>EM to %</div>
+		<div>% to EM</div>
+		<h3>These will only work on part of a whole CSS file, with only elements that have the same parent. For each parent, the base pixel size should be adjusted.</h3>
+		<div>PX to EM</div>
+		<div>EM to PX</div>
+		<div>PX to %</div>
+		<div>% to PX</div>
+		<h3>Use these only if you know what you are doing!</h3>
+		<div>EM to REM</div>
+		<div>REM to EM</div>
+		<div>REM to %</div>
+		<div>% to REM</div>
+	</section>
+	<section id="usage">
+		<h2>Usage</h2>
+		<ol>
+			<li><a href="https://github.com/haiderzia2002/webunitconverter/releases">Download webunitconverter</a></li>
+			<li>Add JS to page.
+				<code>
+					&#60;script src="path/to/webunitconverter.js"&#62;&#60;/script&#62;
+				</code>
+			</li>
+			<li>Invoke function.
+				<code>
+					webunitconverter(originalunittolookfor, outputunit, basepixelsize, stringtobeconverted)
+				</code>
+			</li>
+			<li>The output will be returned by the function.</li>
+		</ol>
+	</section>
+</main>
+</body>
+</html>
